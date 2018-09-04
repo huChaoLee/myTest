@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li></li>
+    dsadasda
+    <li></li>
+    <!--dasdas-->
+    <li></li>
+</ul>
+</body>
+</html>
+<script>
+    function getChildren(ele) {
+        var ary = [];
+        var childs = ele.childNodes;
+        for (var i = 0; i < childs.length; i++) {
+            var cur = childs[i];
+            if (childs[i].nodeType === 1) { //是元素节点
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+    var oUl = document.getElementById("list");
+    console.log(getChildren(oUl));
+</script>

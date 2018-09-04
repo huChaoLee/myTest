@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li></li>
+    dsadasda
+    <li id="li2"></li>
+    <!--dasdas-->
+    <li></li>
+</ul>
+</body>
+</html>
+<script>
+    function getPrev(ele) {
+        var pre = ele.previousSibling;
+        while (pre){
+            if(pre.nodeType === 1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        return pre;  //标识一下，告诉别人没有找到，返回null
+    }
+    var oLi2 = document.getElementById('li2');
+    console.log(getPrev(oLi2));
+</script>
